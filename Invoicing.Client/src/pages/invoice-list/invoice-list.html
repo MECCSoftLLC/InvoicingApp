@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Invoices</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <div text-right padding>
+    <button ion-button small outline (click)="clientList();">Client List</button>
+    <button ion-button color="secondary" small outline (click)="newInvoice();">New Invoice</button>
+  </div>
+
+  <ion-list>
+    <ion-item no-padding *ngFor="let invoice of invoiceList">
+      <ion-avatar item-start no-padding>
+        <img src="assets/imgs/person.png">
+      </ion-avatar>
+      <ion-item item-end no-padding>
+        <h2>{{ invoice.ClientName }}</h2>
+        <p>${{ invoice.Amount }}</p>
+        <p>{{ invoice.InvoiceDate }}</p>
+      </ion-item>
+      <ion-item item-end>
+        <ion-select placeholder="Status" [(ngModel)]="invoice.Status">
+          <ion-option value="paid">Paid</ion-option>
+          <ion-option value="unpaid">Unpaid</ion-option>
+        </ion-select>
+      </ion-item>
+      <button ion-button clear item-end padding (click)="invoiceDetail();">View</button>
+    </ion-item>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,26 @@
+<ion-content padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-12 col-sm-12 col-md-2 col-lg-4 col-xl-4></ion-col>
+      <ion-col col-12 col-sm-12 col-md-8 col-lg-4 col-xl-4>
+        <h1 text-center padding>Simply Invoice</h1>
+        <h3 text-center padding>Login</h3>
+        <ion-item>
+          <ion-label floating>Email</ion-label>
+          <ion-input [(ngModel)]="loginData.Email" type="text"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label floating>Password</ion-label>
+          <ion-input [(ngModel)]="loginData.Password" type="password"></ion-input>
+        </ion-item>
+
+        <div padding-left padding-top>
+          <button ion-button color="secondary" outline block (click)="login();">Login</button>
+        </div>
+        
+      </ion-col>
+      <ion-col col-12 col-sm-12 col-md-2 col-lg-4 col-xl-4></ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

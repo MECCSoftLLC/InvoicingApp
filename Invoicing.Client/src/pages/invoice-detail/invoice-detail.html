@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Invoice Detail</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item>
+    <ion-label>Client</ion-label>
+    <ion-select [(ngModel)]="invoiceData.ClientId">
+      <ion-option value="1">Michael Robinson</ion-option>
+      <ion-option value="2">John Boo</ion-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item [(ngModel)]="invoiceData.Amount">
+    <ion-label>Amount</ion-label>
+    <ion-input text-right type="text"></ion-input>
+  </ion-item>
+
+  <ion-item padding-top>
+    <ion-label>Status</ion-label>
+    <ion-select [(ngModel)]="invoiceData.Status">
+      <ion-option value="paid">Paid</ion-option>
+      <ion-option value="unpaid">Unpaid</ion-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Invoice Date</ion-label>
+    <ion-datetime [(ngModel)]="invoiceData.InvoiceDate" displayFormat="MMMM DD YYYY"></ion-datetime>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Due Date</ion-label>
+    <ion-datetime [(ngModel)]="invoiceData.DueDate" displayFormat="MMMM DD YYYY"></ion-datetime>
+  </ion-item>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col col-6>
+        <button ion-button outline block>Download</button>
+      </ion-col>
+      <ion-col col-6>
+        <button ion-button outline block>Email</button>
+      </ion-col>
+      <ion-col col-6>
+        <button ion-button outline block>Save</button>
+      </ion-col>
+      <ion-col col-6>
+        <button ion-button color="danger" outline block>Delete</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

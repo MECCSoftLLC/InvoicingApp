@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Client List</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <div text-right padding>
+    <button ion-button color="secondary" small outline (click)="newClient();">New Client</button>
+  </div>
+
+  <ion-list>
+    <ion-item *ngFor="let client of clientList">
+      <ion-avatar item-start>
+        <img src="assets/imgs/person.png">
+      </ion-avatar>
+      <h2>{{ client.FirstName }} {{ client.LastName }}</h2>
+      <button ion-button clear item-end padding (click)="addInvoice();">New Invoice</button>
+      <button ion-button clear item-end padding (click)="clientDetail();">View</button>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

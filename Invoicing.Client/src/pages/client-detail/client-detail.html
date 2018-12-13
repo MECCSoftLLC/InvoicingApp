@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Client Detail</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item>
+    <ion-label>First Name</ion-label>
+    <ion-input [(ngModel)]="clientData.FirstName" type="text"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Last Name</ion-label>
+    <ion-input [(ngModel)]="clientData.LastName" type="text"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Email</ion-label>
+    <ion-input [(ngModel)]="clientData.Email" type="text"></ion-input>
+  </ion-item>
+  <ion-item>
+      <ion-label>Notes</ion-label>
+      <ion-textarea [(ngModel)]="clientData.Notes" type="text"></ion-textarea>
+  </ion-item>
+  <ion-grid>
+      <ion-row>
+        <ion-col col-6>
+          <button ion-button outline block>Save</button>
+        </ion-col>
+        <ion-col col-6>
+          <button ion-button color="danger" outline block>Delete</button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+</ion-content>
