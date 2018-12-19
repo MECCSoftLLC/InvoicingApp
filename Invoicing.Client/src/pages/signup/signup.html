@@ -1,0 +1,40 @@
+<ion-content padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-12 col-sm-12 col-md-2 col-lg-4 col-xl-4></ion-col>
+      <ion-col col-12 col-sm-12 col-md-8 col-lg-4 col-xl-4>
+        <h1 text-center padding>Simply Invoice</h1>
+        <h3 text-center padding>Create Account</h3>
+        <ion-item>
+          <ion-label floating>Email</ion-label>
+          <ion-input [(ngModel)]="signupData.Email" type="Email"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>Password</ion-label>
+          <ion-input [(ngModel)]="signupData.Password" type="password"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>Name</ion-label>
+          <ion-input [(ngModel)]="signupData.Name" type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>Company Name</ion-label>
+          <ion-input [(ngModel)]="signupData.CompanyName" type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>Address</ion-label>
+          <ion-input [(ngModel)]="signupData.Address" type="Address"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>Phone</ion-label>
+          <ion-input [(ngModel)]="signupData.Phone" type="Phone"></ion-input>
+        </ion-item>
+        <div padding-left padding-top>
+          <button ion-button color="secondary" outline block
+           (click)="createAccount();">Create Account</button>
+        </div>
+      </ion-col>
+      <ion-col col-12 col-sm-12 col-md-2 col-lg-4 col-xl-4></ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

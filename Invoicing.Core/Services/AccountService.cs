@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Invoicing.Core.Models;
+using Invoicing.Core.ViewModels;
 
 namespace Invoicing.Core.Services
 {
@@ -13,10 +15,19 @@ namespace Invoicing.Core.Services
 
         public Boolean Login(String email, String password)
         {
-            if (email == "michaelemerick@meccsoft.com" && password == "test")
+            ApplicationUser user = UnitOfWork.ApplicationUsers.GetApplicationUserByEmail(email);
+            //if (email == "michaelemerick@meccsoft.com" && password == "test")
+            if (user != null && user.Email == email && user.Password == password)
                 return true;
             else
                 return false;
+        }
+
+        public Boolean Signup(SignupViewModel signupData)
+        {
+            UnitOfWork.ApplicationUsers.AddUser(signupData);
+            UnitOfWork.SaveChanges();
+            return true;
         }
     }
 }

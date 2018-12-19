@@ -12,6 +12,7 @@ import { ClientDetailPageModule } from '../pages/client-detail/client-detail.mod
 import { InvoiceDetailPageModule } from '../pages/invoice-detail/invoice-detail.module';
 import { AuthProvider } from '../providers/auth/auth';
 import { HttpClientModule } from '@angular/common/http';
+import { SignupPageModule } from '../pages/signup/signup.module';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     HttpClientModule,
+    SignupPageModule,
     InvoiceListPageModule,
     ClientListPageModule,
     ClientDetailPageModule,

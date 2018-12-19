@@ -33,5 +33,22 @@ namespace Invoicing.API.Controllers
             }.Serialize();
         }
 
+        [HttpPost("Signup")]
+        public string Signup([FromBody] SignupViewModel signupData)
+        {
+            Boolean success = AccountService.Signup(signupData);
+
+            if (success)
+                return Login(new LoginViewModel()
+                {
+                    Email = signupData.Email, Password = signupData.Password
+                });
+            else
+                return new RequestResult()
+                {
+                    State = RequestState.Failed
+                }.Serialize();
+        }
+
     }
 }

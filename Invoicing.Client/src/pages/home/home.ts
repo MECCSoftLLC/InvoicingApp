@@ -3,6 +3,7 @@ import { NavController } from 'ionic-angular';
 import { InvoiceListPage } from '../invoice-list/invoice-list';
 import { LoginViewModel } from '../../view-models/LoginViewModel';
 import { AuthProvider } from '../../providers/auth/auth';
+import { SignupPage } from '../signup/signup';
 
 @Component({
   selector: 'page-home',
@@ -29,6 +30,10 @@ export class HomePage implements OnInit {
         console.log("Invalid Login");
       }
     });
+  }
+
+  signup() {
+    this.navCtrl.push(SignupPage);
   }
 
 }
